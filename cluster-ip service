@@ -19,6 +19,22 @@ metadata:
         ports:
         - containerPort: 80
 
+
+---
+apiVersion: v2
+kind: service, deployement
+meadata:
+   name: my-service,my-deployement
+   spec:
+      relicas: 3
+      selector:
+         matchlables:
+            app: my-app-cip
+      template:
+       metadata:
+         lables:
+          app: my-app-cip
+          
 ---
 apiVersion: v1
 kind: service
@@ -35,3 +51,8 @@ spec:
    protocol: Tcp
   selector:
      app: my-app-cip
+
+
+
+
+     
